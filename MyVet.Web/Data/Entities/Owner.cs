@@ -12,18 +12,18 @@ namespace MyVet.Web.Data.Entities
         public int Id { get; set; }
 
         [Display(Name = "Document")]
-        [MaxLength(20)]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [MaxLength(20, ErrorMessage = "El campo {0}  no puede tener mas de {1} caracteres.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Document { get; set; }
 
         [Display(Name = "First Name")]
-        [MaxLength(50)]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [MaxLength(50, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string FirstName { get; set; }
 
         [Display(Name = "Last Name")]
-        [MaxLength(50)]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [MaxLength(50, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string LastName { get; set; }
 
         [Display(Name = "Fixed Phone")]
@@ -43,5 +43,9 @@ namespace MyVet.Web.Data.Entities
         [Display(Name = "Owner")]
         public string FullNameWithDocument => $"{FirstName} {LastName} - {Document}";
 
+
+        public ICollection<Pet> pets { get; set; }
+
+        public ICollection<Agenda> Agendas { get; set; }
     }
 }
