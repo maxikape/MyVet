@@ -21,7 +21,7 @@ namespace MyVet.Web.Controllers
             _context = context;
         }
 
-        // GET: Ownners cuando llegue el objeto owner ya a a tener el objeto user y podremos ver las propiedades
+        // GET: Owners cuando llegue el objeto owner ya a a tener el objeto user y podremos ver las propiedades
         //.include tantas veces como quiera, ya puedo mandarle la lista de user y la lista pets
         public IActionResult Index()
         {
